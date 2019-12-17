@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Projects - Linha
+{% endblock title %}
+
+{% block content %}
+
+<main class="projects">
+    <div class="row">
+        <div class="col-md-2">
+            {% include 'layouts/admin-navbar.html' %}
+        </div>
+        <div class="col-md-10">
+            <div class="container-fluid">
+                {% load static %}
+                <div class="responsive-menu d-md-none mt-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="logo">
+                                <img src="{% static 'images/linha-dark.png' %}" class="logo" alt="logo">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mobile-hamburger text-right">
+                                <i class="fa fa-bars fa-2x icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h2 class="page-title">Projects</h2>
+                    <hr>
+                </div>
+                <div class="body">
+                    <div class="projects my-3">
+
+                        {% if 'full_permission' in perms %}
+                        <a href="{% url 'schedule:create_project' %}" class="btn create-btn my-4">Create project</a>
+                        {% endif %}
+
+                        {% if projects %}
+                        <div class="row">
+
+                            {% for project in projects %}
+                            <div class="col-md-6 my-2">
+                                <div class="bg-white shadow-sm py-3 px-3">
+                                    <a href="{% url 'schedule:project' project.id %}">
+                                        <h3 class="project-name">
+                                            {{project.name}}
+                                        </h3>
+                                    </a>
+                                    <div class="mt-4 description">
+                                        <article>
+                                            <p>{{project.description}}</p>
+                                        </article>
+                                    </div>
+                                    <div class="footer mt-4">
+                                        <a href="{% url 'schedule:project' project.id %}" class="btn see-projects">Go to
+                                            project <i class="fa fa-long-arrow-right ml-3"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                        {% else %}
+                        <div class="nothing-to-display">
+                            <h3 class="nothing">
+                                Nothing to show
+                            </h3>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

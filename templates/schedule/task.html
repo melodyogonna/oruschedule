@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<main class="single-task">
+    <div class="row">
+        <div class="col-md-2">
+            {% include 'layouts/admin-navbar.html' %}
+        </div>
+        <div class="col-md-10">
+            <div class="container-fluid">
+                <div class="responsive-menu d-md-none mt-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="logo">
+                                <h3>Linha App</h3>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mobile-hamburger text-right">
+                                <i class="fa fa-bars fa-2x icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <h2 class="page-title">{{task.title}}</h2>
+                    <hr>
+                </div>
+                {% if task.status == 'c' %}
+
+                {% if task.completion_date <= task.end_date %}
+                <span class="time-status ontime d-inline-block mr-5">
+                    <i class="fa fa-clock-o mr-1"></i> on time
+                </span>
+                {% else %}
+                <span class="time-status late d-inline-block mr-5">
+                    <i class="fa fa-clock-o mr-1"></i> late
+                </span>
+                {% endif %}
+
+
+                {% elif tasks.status == 'p' %}
+
+                {% if now <= task.end_date %}
+                <span class="time-status ontime d-inline-block mr-5">
+                    <i class="fa fa-clock-o mr-1"></i> on time
+                </span>
+                {% else %}
+                <span class="time-status late d-inline-block mr-5">
+                    <i class="fa fa-clock-o mr-1"></i> late
+                </span>
+                {% endif %}
+
+                {% endif %}
+                <div class="body">
+                    <div class="task">
+                        <div class="description my-3">
+                            <article>
+                                <p>
+                                    {{task.description}}
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments mt-5">
+                    <h5 class="comment-title">
+                        Comments
+                    </h5>
+
+                    {% if task.Comment_set.all %}
+
+                    <ul class="list-unstyled">
+
+                        {% for comment in task.comment_set.all %}
+                        <li class="bg-white shadow-sm p-3 my-3 rounded">
+                            <div>
+                                <div class="header">
+                                    <h6>{{comment.author.username}}</h6>
+                                    <span class="comment-time">{{comment.commented_on|timesince}}</span>
+                                </div>
+                                <p class="mt-3 comment">
+                                    {{comment.comment_body}}
+                                </p>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <div class="nothing-to-display">
+                        <h3 class="nothing">
+                            Nothing to show
+                        </h3>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="write-comment mt-5">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="commentbody">Write a comment</label>
+                            <textarea name="comment_body" id="commentbody" rows="8" class="form-control"
+                                required></textarea>
+
+                            {% if form.comment_body.errors %}
+                            {{form.comment_body.errors}}
+                            {% endif %}
+
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-dark">Post comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

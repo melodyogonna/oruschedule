@@ -1,0 +1,363 @@
+*{
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+div.admin-navbar{
+    background-color: #012f72;
+    height: 100vh;
+    position: fixed;
+    a{
+        color: hsl(216, 98%, 83%);
+        &:hover{
+        color: hsl(216, 98%, 73%);
+        }
+    }
+    ul.user-info{
+        position: relative;
+        top: 5rem;
+        .username{
+            color: hsl(216, 98%, 83%);
+            &:hover{
+                color: hsl(216, 98%, 73%);
+            }
+        }
+        .logout{
+            a{
+                color: #012f72;
+            }
+        }
+    }
+}
+div.admin-navbar-responsive{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    display: none;
+    &.show-menu{
+        display: block;
+    }
+    div.menu{
+        background-color: rgb(1, 47, 114);
+        width: 17rem;
+        height: 100%;
+        position: fixed;
+        transition: .5s;
+        transform: translateX(-100%);
+        a{
+            color: hsl(216, 98%, 83%);
+            &:hover{
+                color: hsl(216, 98%, 73%);
+            }
+        }
+        ul.user-info{
+        position: relative;
+        top: 5rem;
+        .username{
+            color: hsl(216, 98%, 83%);
+            &:hover{
+                color: hsl(216, 98%, 73%);
+            }
+        }
+        .logout{
+            a{
+                color: #012f72;
+            }
+        }
+    }
+    }
+    div.close-btn{
+        position: relative;
+        span.close-menu{
+            position: absolute;
+            right: 10px;
+            top: 1rem;
+            display: inline-block;
+            button{
+                color: hsl(0, 0%, 60%);
+            }
+        }
+    }
+}
+.responsive-menu{
+    .mobile-hamburger{
+        i.icon{
+            color: hsl(202, 69%, 68%);
+            cursor: pointer;
+        }
+    }
+}
+
+.nothing-to-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .nothing{
+        font-size: 2.5rem;
+        color: hsl(0, 0%, 50%);
+    }
+}
+
+main{
+    overflow: hidden;
+}
+.page-title{
+    font-size: 1.5rem;
+    color: #012f72;
+}
+.create-btn{
+    background-color: #012f72;
+    color: hsl(216, 98%, 93%);
+    font-display: 'Roboto', sans-serif;
+}
+a.create-btn{
+    &:hover{
+        background-color: #012f72;
+        color: hsl(216, 98%, 85%);
+    }
+}
+.color-primary{
+    color: #012f72;
+}
+label{
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+}
+.form-subtitle{
+    color: hsl(0, 0%, 65%)
+}
+img.logo{
+    width: 6rem;
+}
+// Dashboard page start
+
+// Dashboard page end
+
+// Projects page start
+main.projects{
+    div.body{
+        a{
+            &:hover{
+                text-decoration: none;
+            }
+            .project-name{
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: hsl(209, 20%, 50%);
+            transition: .2s;
+            &:hover{
+                color: hsl(209, 20%, 40%);
+            }
+            }
+        }
+        .description{
+            article{
+                p{
+                    font-size: .9rem;
+                    color: hsl(209, 5%, 50%);
+                    font-weight: 300;
+                }
+            }
+        }
+        .footer{
+            .see-projects{
+                background-color: hsl(202, 69%, 58%);
+                color: hsl(202, 40%, 95%);
+            }
+        }
+    }
+}
+// Projects page end
+
+// Single project start page
+main.single-project{
+    div.body{
+        a{
+            &:hover{
+                text-decoration: none;
+            }
+            .project-name{
+            font-size: 1.2rem;
+            font-weight: 550;
+            color: hsl(209, 20%, 50%);
+            transition: .2s;
+            &:hover{
+                color: hsl(209, 20%, 40%);
+            }
+            }
+        }
+        .description{
+            article{
+                p{
+                    font-size: .9rem;
+                    color: hsl(209, 5%, 50%);
+                    font-weight: 300;
+                }
+            }
+        }
+        .footer{
+            .see-projects{
+                background-color: hsl(202, 69%, 58%);
+                color: hsl(202, 40%, 95%);
+            }
+        }
+    }
+    .sections{
+        .sections-heading{
+            color: hsl(202, 69%, 58%);
+            font-size: 1.3rem;
+        }
+        .users{
+        right: 0px; 
+        font-size: 1.3rem;
+        color: hsl(348, 85%, 74%);
+        }
+    }
+
+}
+// Single project end page
+
+// Single section
+main.section{
+    .body{
+        .description{
+            article{
+                p{
+                    font-size: .9rem;
+                    color: hsl(209, 5%, 50%);
+                    font-weight: 300;
+                }
+            }
+        }
+        section.main-section{
+            .tasks{
+                .tasks-heading{
+                    font-size: 1.2rem;
+                    color: hsl(202, 69%, 58%);
+                }
+                .task-body{
+                    border-radius: 10px;
+                    .header{
+                        .task-link{
+                            &:hover{
+                                text-decoration: none;
+                            }
+                            .task-title{
+                                color: hsl(209, 20%, 50%);
+                                transition: .3s;
+                                &:hover{
+                                    color: hsl(209, 20%, 40%);
+                                }
+                            }
+                        }
+                        .some-meta-information{
+                            font-size: .9rem;
+                            color: hsl(0, 0%, 60%);
+                        }
+                    }
+                    .task-description{
+                        article {
+                            p{
+                                font-size: .9rem;
+                                color: hsl(209, 5%, 50%);
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                    .footer{
+                        position: relative;
+                        .topics{
+                            a{
+                                color: #012f72;
+                                &:hover{
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                        .status.completed{
+                            color: hsl(134, 61%, 51%);
+                        }
+                        .status.in-progress{
+                            color: #8797af;
+                        }
+                        .time-status.ontime{
+                            color: hsl(134, 61%, 51%);
+                        }
+                        .time-status.late{
+                            color: hsl(356, 87%, 76%);
+                        }
+                        .view-task{
+                            position: absolute;
+                            display: inline-block;
+                            top: -6px;
+                            right: 0;
+
+                            .view-task-btn{
+                                background-color: hsl(202, 69%, 58%);
+                                color: hsl(202, 20%, 95%);
+                            }
+                        }
+                    }
+                }  
+            }
+            .members{
+                .members-heading{
+                    font-size: 1.2rem;
+                    color: hsl(202, 69%, 58%);
+                }
+            }
+        }
+    }
+    .divider{
+        border-color: hsl(0, 0%, 95%);
+    }
+}
+// Single section end
+
+// Tasks
+main.single-task{
+    .body{
+        .description{
+            article{
+                p{
+                    font-size: .9rem;
+                    color: hsl(209, 5%, 50%);
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+    .comments{
+        .comment-title{
+            font-size: 1.2rem;
+            color: hsl(202, 69%, 58%);
+        }
+        ul{
+            li{
+                div{
+                    .header{
+                        span.comment-time{
+                            font-family: 'Roboto', sans-serif;
+                            color: hsl(216, 15%, 63%);
+                        }
+                    }
+                    p.comment{
+                        color: hsl(0, 0%, 30%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Tasks end

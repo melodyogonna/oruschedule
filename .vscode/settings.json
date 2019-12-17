@@ -10,4 +10,8 @@
   },
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
+  "python.pythonPath": "env/bin/python",
+  "emmet.includeLanguages": {
+    "django-html": "html",
+  },
 }

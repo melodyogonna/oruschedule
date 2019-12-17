@@ -119,3 +119,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# User define settings
+
+# login, logout redirect url
+LOGIN_REDIRECT_URL = '/app/'
+LOGOUT_REDIRECT_URL = '/auth/login'
+
+# login url
+LOGIN_URL = '/auth/login'
+
+# User Model
+AUTH_USER_MODEL = 'schedule.CustomUser'
+
+# Email Backend
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# SMTP setting
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = 'sendgrid_password'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
