@@ -1,0 +1,75 @@
+<div class="px-5 py-3 admin-navbar d-none d-md-block">
+    {% load static %}
+    <div class="logo d-inline-block mb-5">
+        <img src="{% static 'images/linha-light.png' %}" class="logo" alt="logo">
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'schedule:dashboard' %}"> <i class="fa fa-home"></i> Dashboard </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'schedule:projects' %}"> <i class="fa fa-hdd-o"></i> Projects</a>
+        </li>
+
+        {% if 'schedule.full_permission' in perms %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'schedule:members' %}"> <i class="fa fa-user"></i> Members</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'schedule:invite_user' %}"> <i class="fa fa-user-plus"></i> Invite</a>
+        </li>
+        {% endif %}
+
+    </ul>
+    <ul class="nav flex-column user-info">
+        <li class="nav-item text-center mb-2 username">
+            <i class="fa fa-user-circle-o fa-2x"></i><br />
+            <span class="d-inline-block mt-2 mb-4">
+                {{user.username}}
+            </span>
+        </li>
+        <li class="nav-item text-center logout">
+            <a href="/auth/logout" class="nav-link btn btn-light">Log out</a>
+        </li>
+    </ul>
+</div>
+<div class="admin-navbar-responsive d-md-none">
+    <div class="menu px-4 py-3">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'schedule:dashboard' %}"> <i class="fa fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'schedule:projects' %}"> <i class="fa fa-hdd-o"></i> Projects</a>
+            </li>
+            {% if 'schedule.full_permission' in perms %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'schedule:members' %}"> <i class="fa fa-user"></i> Members</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'schedule:invite_user' %}"> <i class="fa fa-user-plus"></i> Invite</a>
+            </li>
+            {% endif %}
+        </ul>
+
+        <ul class="nav flex-column user-info">
+            <li class="nav-item text-center mb-2 username">
+                <i class="fa fa-user-circle-o fa-2x"></i><br />
+                <span class="d-inline-block mt-2 mb-4">
+                    {{user.username}}
+                </span>
+            </li>
+            <li class="nav-item text-center logout">
+                <a href="/auth/logout" class="nav-link btn btn-light">Log out</a>
+            </li>
+        </ul>
+    </div>
+    <div class="close-btn">
+        <span class="close-menu">
+            <button class="rounded-circle p-2 bg-light shadow btn">
+                <i class="fa fa-close fa-2x"></i>
+            </button>
+        </span>
+    </div>
+</div>

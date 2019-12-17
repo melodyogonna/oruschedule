@@ -1,0 +1,4 @@
+{% autoescape off %}
+You have been invited to join OruSchedule, Please click this link to register
+http://{{sitename}}{% url 'schedule:verify_user' vid=id token=token %}
+{% endautoescape %}

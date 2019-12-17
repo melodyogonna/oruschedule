@@ -1,0 +1,42 @@
+html{
+     background-color: #e6e6e6; 
+}
+.page{
+    background-color: #e6e6e6;  
+    padding-left:5% ;
+    padding-right: 5%;
+
+}
+.container{  
+    margin-top:150px;  
+    background-color:#eeeeee; 
+    height:19rem;
+    max-width:30rem !important;
+    border: 1px solid #e6e6e6; 
+    border-radius: 20px;
+    justify-content: center!important;
+    box-shadow:1px 2px 3px 3px #0297da;
+    box-sizing: border-box;
+    
+}
+.container-input{
+    width: 55%; 
+    border: 1px solid #e6e6e6; 
+    border-radius:4px;
+    padding-bottom: 2%;
+    box-shadow:0px 3px 3px 0px #0297da;
+}
+.formorder{
+    text-align: center;
+    margin-top:40px ;
+    font-family: 'Times New Roman', Times, serif;
+}
+button{
+    background-color: #0297da;
+    color: #fff;
+    border-radius: 10px !important;
+    width:8rem!important;
+    height: 2.3rem;
+    margin-left:10px !important;
+    cursor: pointer;
+}

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: bolder!important;
+    font-family: 'Roboto', sans-serif;
+}
+.nav-link{
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-brand{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #175a99;
+}
+.primary-btn{
+    background-color: #012f72;
+    color: #d1d7e0;
+}
+.btn.signup{
+    border-radius: 30px;
+    font-size: 1rem;
+    width:8rem!important;
+    align-items: baseline;
+}
+nav{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.active{
+    color: #012f72;
+}
+.p-primary{
+    padding: 5rem;
+}
+.py-primary, .pt-primary{
+    padding-top: 5rem;
+}
+.py-primary, .pb-primary{
+    padding-bottom: 5rem;
+}
+.px-primary, .pl-primary{
+    padding-left: 5rem;
+}
+.px-primary, .pr-primary{
+    padding-right: 5rem;
+}
+.m-primary{
+    margin: 5rem;
+}
+.my-primary, .mt-primary{
+    margin-top: 5rem;
+}
+.my-primary, .mb-primary{
+    margin-bottom: 5rem;
+}
+.mx-primary, .ml-primary{
+    margin-left: 5rem;
+}
+.mx-primary, .mr-primary{
+    margin-right: 5rem;
+}
+.primary-cta{
+    width: 15rem;
+    font-size: 1.2rem!important;
+    border-radius: 30px!important;
+}
+.hr-line{
+    width: 10rem;
+    border: .2rem solid #0297da;
+}
+.header {
+    display: flex;
+    justify-content: center;
+}
+.section-header::after{
+    content: "";
+    width: 10rem;
+    border-bottom: .4rem solid #0297da;
+    display: block;
+    margin-top: .5rem;
+}
+.testimonial-article{
+    font-size: 1.1rem;
+}
+span.quotes{
+    font-size: 6rem;
+
+}
+.section-header{
+margin-top:40px;
+
+}
+
+.team-pics{
+     margin-left:190px;
+     padding-top:100px ; 
+     padding-bottom:100px;
+     color: #fff;
+}
+
+.signup{
+    text-align: center;
+    margin-top:50px;
+    margin-bottom:60px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn.signup2{
+    border-radius: 18px;
+    font-size: 1rem;
+    color: #d1d7e0!important;
+    width:27rem!important;
+    align-items: baseline;
+    margin-top: 15px;
+   
+}
+
+.big-cta{
+    color: #fff;
+}
+div.middle{
+    margin-top: 10rem;
+}
+@media screen and (max-width:768px){
+    div.middle{
+        margin-top: 1rem;
+    }
+}
+div.bg-dark-blue{
+    background-color: #012f72;
+}
+footer a{
+    color: hsl(0, 0%, 90%);
+}
+footer a:hover{
+    color: hsl(0, 0%, 85%);
+    text-decoration: none;
+}
+.testimonial-content{
+    background-image: url('../images/Vector\ 1.svg');
+}
